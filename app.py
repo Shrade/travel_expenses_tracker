@@ -65,8 +65,11 @@ if authentication_status:
             item_name = st.text_input("Item Name")
             for expense in expenses:
                 st.number_input(f'{expense}', min_value=0, format="%i", step=1,key=expense)
-                myr_check = st.checkbox("MYR")
-                usd_check = st.checkbox("USD")
+                left, right = st.beta_columns(2)
+                with left:
+                    myr_check = st.checkbox("MYR")
+                with right:
+                    usd_check = st.checkbox("USD")
 
             comment = st.text_area("", placeholder="Enter a comment here")
 

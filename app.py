@@ -39,7 +39,7 @@ if authentication_status:
     if selected == 'Expenses':
         
         years = [datetime.today().year]
-        expenses = ["Cost","Tax Amount"]
+        expenses = ["Price(USD)","Tax Amount"]
         locations = ['San Diego','Los Angeles']
         category = ['Food','Transportation','Accommodation','Internet Plan','Merchandise','Event Ticket','Miscellaneous',]
 
@@ -65,6 +65,8 @@ if authentication_status:
             item_name = st.text_input("Item Name")
             for expense in expenses:
                 st.number_input(f'{expense}', min_value=0, format="%i", step=1,key=expense)
+                myr_check = st.checkbox("MYR")
+                usd_check = st.checkbox("USD")
 
             comment = st.text_area("", placeholder="Enter a comment here")
 

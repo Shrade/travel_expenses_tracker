@@ -83,7 +83,7 @@ if authentication_status:
 
         st.dataframe(pd.DataFrame(data))
     
-    elif selected == 'Documents:
+    elif selected == 'Documents':
     
         link='[Travel Document](https://drive.google.com/drive/u/0/folders/1s1-aMKNh5aY25XdcbPe1h0mta6wDrQGe)'
         st.markdown(link,unsafe_allow_html=True)

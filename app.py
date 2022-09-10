@@ -112,9 +112,10 @@ if authentication_status:
         )
         
     elif selected == 'Documents':
-    
+        
+        drive_link = st.secrets["DRIVE_LINK"]
         with st.expander("Travel Documents"):
-            link='[Travel Document](https://drive.google.com/drive/u/0/folders/1uTeVduowSZzYg27FD8kOD2doNMSrSKJ_)'
+            link=f'[Travel Document]({drive_link})'
             st.markdown(link,unsafe_allow_html=True)
             
         with st.expander("Maybank Amex"):

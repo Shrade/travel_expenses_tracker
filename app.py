@@ -16,8 +16,6 @@ if authentication_status:
     
     page_title = 'Travel Expenses Tracker'
     page_icon = ':money_with_wings:'
-
-    st.set_page_config(page_title=page_title, page_icon=page_icon)
     st.title(page_title + " " + page_icon)
 
     hide_st_style = """

@@ -124,6 +124,12 @@ if authentication_status:
     Calls from Overseas        : 603-7844-3595
     Global Assist              : 603-7949-0688
             ''')
+
+        dav_em_num = st.secrets["DAVID_EM_NUM"]
+        with st.expander("Emergency Contact"):
+            st.markdown(f'''David's Sister\n
+            {dav_em_num}
+            ''')
         
     authenticator.logout('Logout', 'main')  
 

@@ -63,13 +63,7 @@ if authentication_status:
 
             # with st.expander("Tap Here to Input"):
             item_name = st.text_input("Item Name")
-            
-            left, right = st.columns(2)
-            with left:
-                myr_check = st.checkbox("MYR")
-            with right:
-                usd_check = st.checkbox("USD")
-                
+     
             for expense in expenses:
                 st.number_input(f'{expense}', min_value=0, format="%i", step=1,key=expense)
           

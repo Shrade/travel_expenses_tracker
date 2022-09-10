@@ -89,6 +89,13 @@ if authentication_status:
         with st.expander("Travel Documents"):
             link='[Travel Document](https://drive.google.com/drive/u/0/folders/1s1-aMKNh5aY25XdcbPe1h0mta6wDrQGe)'
             st.markdown(link,unsafe_allow_html=True)
+            
+        with st.expander("Maybank Amex"):
+            st.markdown('''Krisflyer\n
+            24-Hour Customer Service   : 1800-88-9559
+    Calls from Overseas        : 603-7844-3595
+    Global Assist              : 603-7949-0688
+            ''')
         
     authenticator.logout('Logout', 'main')  
 

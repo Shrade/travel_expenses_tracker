@@ -69,8 +69,6 @@ if authentication_status:
 
                 db.insert_data(period,category,location,item_name,expenses,comment)
                 st.success("Submitted")
-
-        st.dataframe(pd.DataFrame(data))
         
     elif selected == 'Summary':
         

@@ -29,7 +29,7 @@ if authentication_status:
     
     selected = option_menu(
         menu_title=None,
-        options=["Expenses", "Documents"],
+        options=["Expenses","Summary","Documents"],
         icons=["house", "book"],
         menu_icon="cast", 
         default_index=0,
@@ -42,18 +42,6 @@ if authentication_status:
         expenses = ["Price(USD)","Tax Amount"]
         locations = ['San Diego','Los Angeles']
         category = ['Food','Transportation','Accommodation','Internet Plan','Merchandise','Event Ticket','Miscellaneous',]
-
-        data = db.fetch_all_data()
-
-        total_expenses = sum([sum(i.get("expenses").values()) for i in data])
-        c = CurrencyRates()
-        conversion_rate = round(c.get_rate('USD','MYR'),3)
-        expenses_myr = round(total_expenses*conversion_rate,2)
-
-        col1,col2,col3 = st.columns(3)
-        col1.metric("Total Expenses(MYR)", f'RM {expenses_myr}')
-        col2.metric("Total Expenses(USD)", f'{total_expenses} $')
-        col3.metric("Conversion Rate", f'{conversion_rate}')
 
         with st.form("entry_form", clear_on_submit=True):
             period = str(st.date_input("Date"))
@@ -83,7 +71,48 @@ if authentication_status:
                 st.success("Submitted")
 
         st.dataframe(pd.DataFrame(data))
-    
+        
+    elif selected == 'Summary':
+        
+        def flatten_dict(elements):
+
+            filter_list = ['Price(USD)', 'Tax Amount']
+            filtered = {key: val for key, val in elements.items() if key in filter_list}
+            return pd.Series(filtered)
+
+        data = db.fetch_all_data()
+
+        df = pd.DataFrame(data)
+
+        flatten_df = pd.concat([df, df['expenses'].apply(flatten_dict)], axis=1)
+        flatten_df = flatten_df[['date','item_name','category','location','Price(USD)']]
+
+        c = CurrencyRates()
+        conversion_rate = round(c.get_rate('USD','MYR'),3)
+
+        total_expenses = flatten_df['Price(USD)'].sum()
+        expenses_myr = round(total_expenses*conversion_rate,2)
+
+        col1,col2,col3 = st.columns(3)
+        col1.metric("Total Expenses(MYR)", f'RM {expenses_myr}')
+        col2.metric("Total Expenses(USD)", f'{total_expenses} $')
+        col3.metric("Conversion Rate", f'{conversion_rate}')
+
+        st.dataframe(flatten_df)
+        
+        @st.cache
+        def convert_df(df):
+            return df.to_csv().encode('utf-8')
+
+        csv = convert_df(flatten_df)
+
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name='travel_expenses.csv',
+            mime='text/csv',
+        )
+        
     elif selected == 'Documents':
     
         with st.expander("Travel Documents"):

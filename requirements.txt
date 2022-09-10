@@ -7,3 +7,4 @@ streamlit==1.12.2
 streamlit-option-menu==0.3.2
 toml==0.10.2
 boto==2.49.0
+streamlit-authenticator==0.2.1

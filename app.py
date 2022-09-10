@@ -30,7 +30,7 @@ if authentication_status:
     selected = option_menu(
         menu_title=None,
         options=["Expenses","Summary","Documents"],
-        icons=["house", "book"],
+        icons=["credit-card","bar-chart","folder"],
         menu_icon="cast", 
         default_index=0,
         orientation='horizontal'

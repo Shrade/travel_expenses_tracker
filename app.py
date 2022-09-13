@@ -23,6 +23,15 @@ with st.sidebar:
         [HI Los Angeles](https://www.google.com/maps/place/HI+Los+Angeles+Santa+Monica+Hostel/@34.0141165,-118.49856,17z/data=!3m1!4b1!4m10!3m9!1s0x80c2a4d03b9d770b:0x3bc48de3c7234862!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d34.0141201!4d-118.4964023)\n
     """)
     
+    st.subheader('Bus Ticket')
+    st.write("[FlyAway LAX](https://www.laxshuttletix.com/webstore/shop/viewItems.aspx?cg=VanNuys&c=UnionStationTickets)")
+
+    st.subheader("eSim")
+    st.markdown("""
+    [Airalo](https://www.airalo.com/)\n
+    [T-Mobile](https://www.t-mobile.com/offers/free-trial)
+    """)
+    
 name, authentication_status, username = authenticator.login('Login', 'main')
 
 if authentication_status:

@@ -1,7 +1,10 @@
 from deta import Deta
-import streamlit as st
 
-DETA_KEY = st.secrets["DETA_KEY"]
+# import streamlit as st
+# DETA_KEY = st.secrets["DETA_KEY"]
+
+import os 
+DETA_KEY = os.getenv("DETA_KEY")
 
 deta = Deta(DETA_KEY)
 

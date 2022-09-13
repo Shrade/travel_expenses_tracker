@@ -11,7 +11,7 @@ import helper
 
 authenticator = helper.main()
 st.title('Quick Access')
-with st.expander("Information"):
+with st.expander("Map Information"):
     st.write("""
         [Los Angeles International Airport](https://www.google.com/maps/search/lax+ca/@33.9445676,-118.4037581,15.25z) \n
         [Union Station, CA](https://www.google.com/maps/place/Union+Station/@36.7867511,-118.9325625,4z/data=!4m9!1m2!2m1!1sunion+station+CA!3m5!1s0x80c2c72866bdd1c1:0x2a8810a25b3877cf!8m2!3d34.056183!4d-118.2365887!15sChB1bmlvbiBzdGF0aW9uIENBkgENdHJhaW5fc3RhdGlvbuABAA) \n

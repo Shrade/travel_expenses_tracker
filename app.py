@@ -178,8 +178,8 @@ if authentication_status:
         )
         
     elif selected == 'Documents':
-        
-        drive_link = st.secrets["DRIVE_LINK"]
+     
+        drink_link = os.getenv("DRIVE_LINK")
         with st.expander("Travel Documents"):
             link=f'[Travel Document]({drive_link})'
             st.markdown(link,unsafe_allow_html=True)
@@ -193,7 +193,7 @@ if authentication_status:
                 Global Assist              : 603-7949-0688
             """)
 
-        dav_em_num = st.secrets["DAVID_EM_NUM"]
+        dav_em_num = os.getenv("DAVID_EM_NUM")
         with st.expander("Emergency Contact"):
             st.markdown(f"""**David's Sister**   
             {dav_em_num}

@@ -10,7 +10,10 @@ import database as db
 import helper
 
 authenticator = helper.main()
-st.title('Quick Access')
+
+name, authentication_status, username = authenticator.login('Login', 'main')
+
+st.subheader('Quick Access')
 with st.expander("Map Information"):
     st.write("""
         [Los Angeles International Airport](https://www.google.com/maps/search/lax+ca/@33.9445676,-118.4037581,15.25z) \n
@@ -20,8 +23,7 @@ with st.expander("Map Information"):
         [San Diego Convention Centre](https://www.google.com/maps/place/San+Diego+Convention+Center/@32.7055022,-117.1622915,17z/data=!3m2!4b1!5s0x80d9535a81657f0b:0x4a731a310e109ee5!4m10!3m9!1s0x80d953574be55d8b:0x568846370a748ca5!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d32.7054977!4d-117.1601028)\n
         [HI Los Angeles](https://www.google.com/maps/place/HI+Los+Angeles+Santa+Monica+Hostel/@34.0141165,-118.49856,17z/data=!3m1!4b1!4m10!3m9!1s0x80c2a4d03b9d770b:0x3bc48de3c7234862!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d34.0141201!4d-118.4964023)\n
         """)
-name, authentication_status, username = authenticator.login('Login', 'main')
-
+    
 if authentication_status:
     
     page_title = 'Travel Expenses Tracker'

@@ -11,10 +11,8 @@ import helper
 
 authenticator = helper.main()
 
-name, authentication_status, username = authenticator.login('Login', 'main')
-
-st.subheader('Quick Access')
-with st.expander("Map Information"):
+with st.sidebar:
+    st.subheader('Quick Access')
     st.write("""
         [Los Angeles International Airport](https://www.google.com/maps/search/lax+ca/@33.9445676,-118.4037581,15.25z) \n
         [Union Station, CA](https://www.google.com/maps/place/Union+Station/@36.7867511,-118.9325625,4z/data=!4m9!1m2!2m1!1sunion+station+CA!3m5!1s0x80c2c72866bdd1c1:0x2a8810a25b3877cf!8m2!3d34.056183!4d-118.2365887!15sChB1bmlvbiBzdGF0aW9uIENBkgENdHJhaW5fc3RhdGlvbuABAA) \n
@@ -22,8 +20,10 @@ with st.expander("Map Information"):
         [HI San Diego](https://www.google.com/maps/place/HI+San+Diego+Downtown/@32.7113366,-117.1642744,17z/data=!3m1!4b1!4m10!3m9!1s0x80d95359bceddd73:0x1c4d3c69c0923875!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d32.71137!4d-117.1598052) \n
         [San Diego Convention Centre](https://www.google.com/maps/place/San+Diego+Convention+Center/@32.7055022,-117.1622915,17z/data=!3m2!4b1!5s0x80d9535a81657f0b:0x4a731a310e109ee5!4m10!3m9!1s0x80d953574be55d8b:0x568846370a748ca5!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d32.7054977!4d-117.1601028)\n
         [HI Los Angeles](https://www.google.com/maps/place/HI+Los+Angeles+Santa+Monica+Hostel/@34.0141165,-118.49856,17z/data=!3m1!4b1!4m10!3m9!1s0x80c2a4d03b9d770b:0x3bc48de3c7234862!5m4!1s2022-10-10!2i3!4m1!1i2!8m2!3d34.0141201!4d-118.4964023)\n
-        """)
+    """)
     
+name, authentication_status, username = authenticator.login('Login', 'main')
+
 if authentication_status:
     
     page_title = 'Travel Expenses Tracker'

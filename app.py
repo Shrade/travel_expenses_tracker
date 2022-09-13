@@ -159,17 +159,19 @@ if authentication_status:
             st.markdown(link,unsafe_allow_html=True)
             
         with st.expander("Maybank Amex"):
-            st.markdown('''Krisflyer\n
-            24-Hour Customer Service   : 1800-88-9559
-    Calls from Overseas        : 603-7844-3595
-    Global Assist              : 603-7949-0688
-            ''')
+            st.write(
+                    """
+                **Krisflyer**           
+                24-Hour Customer Service   : 1800-88-9559         
+                Calls from Overseas        : 603-7844-3595        
+                Global Assist              : 603-7949-0688
+            """)
 
         dav_em_num = st.secrets["DAVID_EM_NUM"]
         with st.expander("Emergency Contact"):
-            st.markdown(f'''David's Sister\n
+            st.markdown(f"""**David's Sister**   
             {dav_em_num}
-            ''')
+            """)
         
     authenticator.logout('Logout', 'main')  
 

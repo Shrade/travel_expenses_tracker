@@ -49,6 +49,32 @@ with st.sidebar:
             T-Mobile                  
             https://www.t-mobile.com/offers/free-trial
         """)
+        
+        st.write("***")
+
+        st.subheader("Suggested Places")
+        st.write("""
+            Los Angeles   
+            1. Santa Monica Pier
+            2. 3rd Street Promenade
+            3. Downtown Santa Monica  
+            4. The Grove
+            5. The Original Farmer's Market
+            6. Rodeo Drive    
+            7. Downtown LA
+            8. Griffith Observatory (if applicable)      
+        """)
+
+        st.write("***")
+
+        st.subheader("Places to eat")
+        st.write("""
+            1. In N Out       
+            2. Chick-fil-A 
+            3. Lucky's Lunch/Breakfast (SD)      
+            4. Benny's Tacos (LA)     
+            5. KazuNori: The Original Hand Roll Bar (LA)       
+        """)
     
 name, authentication_status, username = authenticator.login('Login', 'main')
 

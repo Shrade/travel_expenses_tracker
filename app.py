@@ -179,7 +179,7 @@ if authentication_status:
         
     elif selected == 'Documents':
      
-        drink_link = os.getenv("DRIVE_LINK")
+        drive_link = os.getenv("DRIVE_LINK")
         with st.expander("Travel Documents"):
             link=f'[Travel Document]({drive_link})'
             st.markdown(link,unsafe_allow_html=True)

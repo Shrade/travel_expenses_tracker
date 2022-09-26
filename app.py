@@ -198,6 +198,18 @@ if authentication_status:
             st.markdown(f"""**David's Sister**   
             {dav_em_num}
             """)
+            
+        ryan_em_num = os.getenv("RYAN_EM_NUM")
+        with st.expander("Emergency Contact"):
+            st.markdown(f"""**Ryan Wong**   
+            {ryan_em_num}
+            """)
+
+        ckm_em_num = os.getenv("CKM_EM_NUM")
+        with st.expander("Emergency Contact"):
+            st.markdown(f"""**Ryan Wong's Mom**   
+            {ckm_em_num}
+            """)
         
     authenticator.logout('Logout', 'main')  
 

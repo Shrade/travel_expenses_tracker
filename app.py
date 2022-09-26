@@ -194,19 +194,18 @@ if authentication_status:
             """)
 
         dav_em_num = os.getenv("DAVID_EM_NUM")
+        ryan_em_num = os.getenv("RYAN_EM_NUM")
+        ckm_em_num = os.getenv("CKM_EM_NUM")
+        
         with st.expander("Emergency Contact"):
             st.markdown(f"""**David's Sister**   
             {dav_em_num}
             """)
             
-        ryan_em_num = os.getenv("RYAN_EM_NUM")
-        with st.expander("Emergency Contact"):
             st.markdown(f"""**Ryan Wong**   
             {ryan_em_num}
             """)
 
-        ckm_em_num = os.getenv("CKM_EM_NUM")
-        with st.expander("Emergency Contact"):
             st.markdown(f"""**Ryan Wong's Mom**   
             {ckm_em_num}
             """)
